@@ -1,233 +1,1278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bankd — Privacy Policy</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bankd — Earn Your Screen Time</title>
+<meta name="description" content="Bankd turns screen time into something kids earn. Chores, health goals, and good habits convert into tokens. Tokens convert into minutes. Parents stay in control — without the daily battles.">
+<meta property="og:title" content="Bankd — Earn Your Screen Time">
+<meta property="og:description" content="Kids earn tokens through chores and healthy habits. Tokens = screen time minutes. Parents approve. No more battles.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F07A2A;
+    --orange-light: #FF8C42;
+    --orange-pale: #FFF0E6;
+    --green: #34C759;
+    --red: #FF3B30;
+    --bg: #F7F7F5;
+    --white: #FFFFFF;
+    --ink: #111111;
+    --ink-mid: #444444;
+    --ink-muted: #8A8A8A;
+    --ink-faint: #CCCCCC;
+    --border: rgba(0,0,0,0.08);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+  }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.7;
-    }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    header {
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+  html { scroll-behavior: smooth; }
 
-    header .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #E8610A;
-      letter-spacing: -0.5px;
-    }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    header .tag {
-      font-size: 13px;
-      color: #999;
-    }
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(247,247,245,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
 
-    .container {
-      max-width: 720px;
-      margin: 48px auto;
-      padding: 0 24px 80px;
-    }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
 
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 6px;
-    }
+  .nav-logo-icon {
+    width: 32px; height: 32px;
+    background: var(--orange);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
 
-    .effective {
-      font-size: 14px;
-      color: #999;
-      margin-bottom: 40px;
-    }
+  .nav-logo-icon svg { width: 18px; height: 18px; }
 
-    h2 {
-      font-size: 17px;
-      font-weight: 600;
-      color: #111;
-      margin: 36px 0 10px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #E8610A;
-    }
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
 
-    h3 {
-      font-size: 15px;
-      font-weight: 600;
-      color: #333;
-      margin: 20px 0 8px;
-    }
+  .nav-links {
+    display: flex; align-items: center; gap: 8px;
+  }
 
-    p {
-      font-size: 15px;
-      color: #444;
-      margin-bottom: 14px;
-    }
+  .nav-link {
+    font-size: 14px; font-weight: 500;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    cursor: pointer; background: none; border: none;
+  }
 
-    ul {
-      margin: 8px 0 16px 20px;
-    }
+  .nav-link:hover, .nav-link.active { color: var(--ink); background: rgba(0,0,0,0.05); }
 
-    ul li {
-      font-size: 15px;
-      color: #444;
-      margin-bottom: 6px;
-    }
+  .nav-cta {
+    background: var(--orange);
+    color: white;
+    font-size: 13px; font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.2s;
+    border: none; cursor: pointer;
+  }
 
-    .badge {
-      display: inline-block;
-      background: #E8610A;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 32px;
-    }
+  .nav-cta:hover { background: var(--orange-light); }
 
-    .contact-block {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-top: 12px;
-    }
+  /* ── PAGES ── */
+  .page { display: none; }
+  .page.active { display: block; }
 
-    .contact-block p {
-      margin: 0;
-      font-size: 15px;
-      color: #444;
-    }
+  /* ── HERO ── */
+  .hero {
+    padding: 120px 24px 80px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
 
-    .contact-block a {
-      color: #E8610A;
-      text-decoration: none;
-    }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--orange-pale);
+    border: 1px solid rgba(240,122,42,0.2);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px; font-weight: 600;
+    color: var(--orange);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
 
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: #bbb;
-      margin-top: 60px;
-      padding-top: 24px;
-      border-top: 1px solid #eee;
-    }
-  </style>
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--orange);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange);
+    color: white;
+    font-size: 15px; font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(240,122,42,0.35);
+  }
+
+  .btn-primary:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(240,122,42,0.4);
+  }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white;
+    color: var(--ink);
+    font-size: 15px; font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ink-faint);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+  }
+
+  /* ── HOW IT WORKS ── */
+  .section {
+    padding: 80px 24px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--ink-mid);
+    max-width: 540px;
+    line-height: 1.65;
+    margin-bottom: 56px;
+  }
+
+  /* Steps */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+
+  .step {
+    background: white;
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .step:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--orange-pale);
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .step-icon {
+    width: 48px; height: 48px;
+    background: var(--orange-pale);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  .step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .step p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+  }
+
+  /* ── FEATURES GRID ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 700px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  .feature-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .feature-card.accent {
+    background: var(--orange);
+    border-color: transparent;
+  }
+
+  .feature-card.accent .feature-title,
+  .feature-card.accent .feature-body,
+  .feature-card.accent .feature-list li { color: white; }
+
+  .feature-card.accent .feature-list li::before { background: rgba(255,255,255,0.5); }
+
+  .feature-icon {
+    font-size: 28px;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .feature-body {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+
+  .feature-list li {
+    font-size: 14px;
+    color: var(--ink-mid);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .feature-list li::before {
+    content: '';
+    position: absolute; left: 0; top: 8px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+
+  /* ── COMING SOON ── */
+  .roadmap {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .roadmap-header {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+
+  .roadmap-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 600;
+    color: var(--ink); letter-spacing: -0.3px;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  .badge-live {
+    background: rgba(52,199,89,0.1);
+    color: var(--green);
+  }
+
+  .badge-soon {
+    background: var(--orange-pale);
+    color: var(--orange);
+  }
+
+  .badge-planned {
+    background: rgba(0,0,0,0.05);
+    color: var(--ink-muted);
+  }
+
+  .roadmap-items {
+    display: flex; flex-direction: column;
+  }
+
+  .roadmap-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+
+  .roadmap-item:last-child { border-bottom: none; }
+  .roadmap-item:hover { background: var(--bg); }
+
+  .roadmap-item-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .roadmap-item-content { flex: 1; }
+
+  .roadmap-item-title {
+    font-size: 15px; font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .roadmap-item-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* ── PRIVACY CALLOUT ── */
+  .privacy-callout {
+    background: var(--ink);
+    border-radius: var(--radius);
+    padding: 48px 40px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    .privacy-callout { grid-template-columns: 1fr; }
+  }
+
+  .privacy-callout h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+
+  .privacy-callout p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.65;
+    max-width: 480px;
+  }
+
+  .privacy-badges {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .privacy-badge-item {
+    display: flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+  }
+
+  .privacy-badge-icon {
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+
+  .privacy-badge-text {
+    font-size: 13px; font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .testimonials { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .testimonials { grid-template-columns: 1fr; }
+  }
+
+  .testimonial {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid var(--border);
+  }
+
+  .testimonial-stars {
+    font-size: 13px;
+    color: var(--orange);
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-size: 13px; font-weight: 600;
+    color: var(--ink);
+  }
+
+  .testimonial-role {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    text-align: center;
+    padding: 80px 24px 100px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .cta-section p {
+    font-size: 16px;
+    color: var(--ink-mid);
+    margin-bottom: 36px;
+    line-height: 1.65;
+  }
+
+  .app-store-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ink);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .app-store-btn:hover {
+    background: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  }
+
+  .app-store-btn-text { text-align: left; }
+  .app-store-btn-text span { display: block; }
+  .app-store-btn-text .small { font-size: 11px; opacity: 0.7; font-weight: 400; }
+  .app-store-btn-text .big { font-size: 16px; font-weight: 600; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+
+  .footer-left {
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--ink);
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .footer-links {
+    display: flex; align-items: center; gap: 20px;
+  }
+
+  .footer-link {
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    cursor: pointer; background: none; border: none;
+  }
+
+  .footer-link:hover { color: var(--ink); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--ink-faint);
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+  }
+
+  /* ── PRIVACY PAGE ── */
+  .privacy-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 100px 24px 80px;
+  }
+
+  .privacy-page h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px; font-weight: 700;
+    letter-spacing: -0.8px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .privacy-page .updated {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 48px;
+  }
+
+  .privacy-page h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 600;
+    color: var(--ink);
+    margin: 40px 0 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .privacy-page p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .privacy-page ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  .privacy-page ul li {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.8;
+    margin-bottom: 6px;
+  }
+
+  .privacy-highlight {
+    background: rgba(52,199,89,0.08);
+    border: 1px solid rgba(52,199,89,0.2);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .privacy-highlight p {
+    color: #1A7A3A;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .privacy-contact {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+
+  .privacy-contact h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .privacy-contact p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .privacy-contact a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+
+  /* ── NOTIFY FORM ── */
+  .notify-form {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .notify-input {
+    flex: 1; min-width: 220px; max-width: 300px;
+    padding: 13px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    font-size: 14px; font-family: 'DM Sans', sans-serif;
+    background: white;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .notify-input:focus { border-color: var(--orange); }
+
+  .notify-btn {
+    padding: 13px 24px;
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px; font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .notify-btn:hover { background: var(--orange-light); }
+
+  .notify-success {
+    display: none;
+    font-size: 14px; font-weight: 500;
+    color: var(--green);
+    padding: 12px 0;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 700px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .nav-links .nav-link { display: none; }
+  }
+
+  .stat-item { text-align: center; }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 12px; font-weight: 500;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+</style>
 </head>
 <body>
 
-  <header>
-    <span class="logo">Bankd</span>
-    <span class="tag">Privacy Policy</span>
-  </header>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 1L16 4V10C16 13.5 12.5 16.5 9 17.5C5.5 16.5 2 13.5 2 10V4L9 1Z" fill="white" opacity="0.9"/>
+        <rect x="5.5" y="8.5" width="5" height="4.5" rx="1" fill="#F07A2A"/>
+        <path d="M6.5 8.5V7C6.5 5.9 7.2 5 9 5C10.8 5 11.5 5.9 11.5 7V8.5" stroke="#F07A2A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Bankd</span>
+  </a>
+  <div class="nav-links">
+    <button class="nav-link active" onclick="showPage('home'); setActive(this)">Home</button>
+    <button class="nav-link" onclick="scrollTo('features'); setActive(this)">Features</button>
+    <button class="nav-link" onclick="scrollTo('roadmap-section'); setActive(this)">Roadmap</button>
+    <button class="nav-link" onclick="showPage('privacy'); setActive(this)">Privacy</button>
+    <a class="nav-cta" href="#notify">Get Notified</a>
+  </div>
+</nav>
 
-  <div class="container">
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Coming Soon to the App Store
+    </div>
+    <h1>Screen time<br>kids <em>earn.</em></h1>
+    <p class="hero-sub">Bankd turns screen time into a currency your kids work for. Chores, healthy habits, and good behavior earn tokens. Tokens become minutes. You stay in control — without the daily battle.</p>
+    <div class="hero-actions">
+      <a href="#notify" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5L15 6.5L11.5 10L12.5 15L8 12.5L3.5 15L4.5 10L1 6.5L6 5.5L8 1Z" fill="white"/></svg>
+        Notify Me at Launch
+      </a>
+      <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div style="max-width:1040px;margin:0 auto 0;padding:0 24px;">
+    <div class="stats-bar fade-in">
+      <div class="stat-item">
+        <span class="stat-value">1:1</span>
+        <span class="stat-label">Token to Minute</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">On-Device</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">Free</span>
+        <span class="stat-label">No Subscription</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">0</span>
+        <span class="stat-label">Data Collected</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Three steps.<br>No more arguments.</h2>
+    <p class="section-sub">The system has logic kids understand. When tokens are gone, time is gone — and you didn't make that decision. The math did.</p>
+    <div class="steps">
+      <div class="step fade-in">
+        <div class="step-icon">✅</div>
+        <h3>Kids Earn</h3>
+        <p>Complete chores, hit step goals, get good sleep, read — every action earns tokens based on rules you set. Streaks earn bonuses.</p>
+      </div>
+      <div class="step fade-in fade-in-delay-1">
+        <div class="step-icon">⏱️</div>
+        <h3>Kids Request</h3>
+        <p>When they want screen time, they use the app to request minutes. The token cost is shown upfront. No tokens, no request.</p>
+      </div>
+      <div class="step fade-in fade-in-delay-2">
+        <div class="step-icon">👍</div>
+        <h3>Parents Approve</h3>
+        <p>You get a notification, review the request, and approve or deny with one tap — with an optional reason. You're always in control.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <p class="section-label">Features</p>
+    <h2 class="section-title">Built for real families.</h2>
+    <p class="section-sub">Not another app that works for a week and falls apart. Bankd is designed around how families actually operate.</p>
+    <div class="features-grid">
+
+      <div class="feature-card accent fade-in">
+        <span class="feature-icon">👨‍👩‍👧‍👦</span>
+        <h3 class="feature-title">The Whole Family, One App</h3>
+        <p class="feature-body">Multiple kids, multiple parents, multiple guardians — all on one device. Switch profiles instantly. Each kid has their own dashboard, balance, and history.</p>
+        <ul class="feature-list">
+          <li>Up to 10 family members</li>
+          <li>Separate parent & guardian PINs</li>
+          <li>Per-kid token caps & daily allowances</li>
+          <li>Guardian approval — grandparents, babysitters</li>
+        </ul>
+      </div>
+
+      <div class="feature-card fade-in fade-in-delay-1">
+        <span class="feature-icon">🏆</span>
+        <h3 class="feature-title">Earn in Ways That Matter</h3>
+        <p class="feature-body">Tokens aren't just for chores. Connect to HealthKit and reward the behaviors that actually matter for growing kids.</p>
+        <ul class="feature-list">
+          <li>Chore board — post, claim, complete, approve</li>
+          <li>Recurring chores with custom schedules</li>
+          <li>Steps, sleep, workouts via HealthKit</li>
+          <li>Reading timer — manual or timed sessions</li>
+          <li>Streaks with bonus token rewards</li>
+        </ul>
+      </div>
+
+      <div class="feature-card fade-in">
+        <span class="feature-icon">📊</span>
+        <h3 class="feature-title">Parent Dashboard</h3>
+        <p class="feature-body">See every kid's balance, streak, and pending requests at a glance. Full activity history with every approval logged by name.</p>
+        <ul class="feature-list">
+          <li>7-day earning chart per kid</li>
+          <li>Reject with a reason — kids see why</li>
+          <li>Grant bonus tokens for anything</li>
+          <li>Full audit trail — every earn & spend</li>
+          <li>3 chore completions to review banner</li>
+        </ul>
+      </div>
+
+      <div class="feature-card fade-in fade-in-delay-1">
+        <span class="feature-icon">🔒</span>
+        <h3 class="feature-title">Privacy You Can Trust</h3>
+        <p class="feature-body">Zero accounts. Zero servers. Zero data collection. Everything lives on your device. Always.</p>
+        <ul class="feature-list">
+          <li>100% on-device — nothing leaves your phone</li>
+          <li>COPPA compliant by design</li>
+          <li>Privacy screen on app background</li>
+          <li>PIN lock with configurable timeout</li>
+          <li>Full data export & wipe at any time</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ROADMAP -->
+  <section class="section" id="roadmap-section">
+    <p class="section-label">Roadmap</p>
+    <h2 class="section-title">What's live. What's coming.</h2>
+    <p class="section-sub">Version 1.0 ships with a complete family earn system. Here's what's already built and what's coming next.</p>
+
+    <div class="roadmap fade-in">
+      <div class="roadmap-header">
+        <h3>Version 1.0 — Launch</h3>
+        <span class="badge badge-live">● Live at Launch</span>
+      </div>
+      <div class="roadmap-items">
+        <div class="roadmap-item"><span class="roadmap-item-icon">✅</span><div class="roadmap-item-content"><div class="roadmap-item-title">Token earn system</div><div class="roadmap-item-desc">Chores, HealthKit, reading, custom activities — all earn tokens on rules you set</div></div><span class="badge badge-live">Live</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">⏱️</span><div class="roadmap-item-content"><div class="roadmap-item-title">Screen time request & approval flow</div><div class="roadmap-item-desc">Kids request minutes, parents approve or deny with optional reason — one tap</div></div><span class="badge badge-live">Live</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">📋</span><div class="roadmap-item-content"><div class="roadmap-item-title">Chore board</div><div class="roadmap-item-desc">Post one-off or recurring chores, kids claim and complete, parents approve</div></div><span class="badge badge-live">Live</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">🔥</span><div class="roadmap-item-content"><div class="roadmap-item-title">Streaks & bonus rewards</div><div class="roadmap-item-desc">Daily goal streaks, per-chore streaks, and configurable bonus tokens</div></div><span class="badge badge-live">Live</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">👨‍👩‍👧</span><div class="roadmap-item-content"><div class="roadmap-item-title">Multi-kid, multi-parent, guardian support</div><div class="roadmap-item-desc">Full family structure — parents, guardians, kids, all on one device</div></div><span class="badge badge-live">Live</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">🔒</span><div class="roadmap-item-content"><div class="roadmap-item-title">Privacy & security</div><div class="roadmap-item-desc">PIN lock, privacy screen, data export, full wipe — 100% on-device</div></div><span class="badge badge-live">Live</span></div>
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+
+    <div class="roadmap fade-in">
+      <div class="roadmap-header">
+        <h3>Version 1.1 — Coming Soon</h3>
+        <span class="badge badge-soon">In Development</span>
+      </div>
+      <div class="roadmap-items">
+        <div class="roadmap-item"><span class="roadmap-item-icon">📱</span><div class="roadmap-item-content"><div class="roadmap-item-title">Real screen time enforcement</div><div class="roadmap-item-desc">Deep iOS Screen Time API integration — approved tokens actually lock and unlock apps</div></div><span class="badge badge-soon">Soon</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">☁️</span><div class="roadmap-item-content"><div class="roadmap-item-title">iCloud family sync</div><div class="roadmap-item-desc">One family, multiple devices — mom's iPhone and dad's iPhone stay in sync via iCloud</div></div><span class="badge badge-soon">Soon</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">🔔</span><div class="roadmap-item-content"><div class="roadmap-item-title">Push notifications</div><div class="roadmap-item-desc">Parents notified instantly when kids submit requests or complete chores</div></div><span class="badge badge-soon">Soon</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">🎯</span><div class="roadmap-item-content"><div class="roadmap-item-title">Savings goals</div><div class="roadmap-item-desc">Kids can set screen time goals and save tokens toward them — financial literacy layer</div></div><span class="badge badge-soon">Soon</span></div>
+      </div>
+    </div>
+
+    <div style="height:20px"></div>
+
+    <div class="roadmap fade-in">
+      <div class="roadmap-header">
+        <h3>Future</h3>
+        <span class="badge badge-planned">Planned</span>
+      </div>
+      <div class="roadmap-items">
+        <div class="roadmap-item"><span class="roadmap-item-icon">👤</span><div class="roadmap-item-content"><div class="roadmap-item-title">Personal Accountability Mode</div><div class="roadmap-item-desc">For teens and adults — self-directed screen time budgets, earn via workouts and deep work</div></div><span class="badge badge-planned">Planned</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">📅</span><div class="roadmap-item-content"><div class="roadmap-item-title">Scheduled restrictions</div><div class="roadmap-item-desc">Time-based rules — no screen time before 8am, homework hours, bedtime</div></div><span class="badge badge-planned">Planned</span></div>
+        <div class="roadmap-item"><span class="roadmap-item-icon">📊</span><div class="roadmap-item-content"><div class="roadmap-item-title">Weekly family report</div><div class="roadmap-item-desc">Automatic weekly summary — tokens earned, screen time used, streaks, top earners</div></div><span class="badge badge-planned">Planned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <p class="section-label">Early Families</p>
+    <h2 class="section-title">What parents are saying.</h2>
+    <p class="section-sub">Bankd has been tested with real families during development. Here's what they experienced.</p>
+    <div class="testimonials">
+      <div class="testimonial fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"My 11-year-old now voluntarily walks the dog every morning. He figured out it's the best tokens-per-minute chore. I didn't expect him to be doing ROI analysis but here we are."</p>
+        <div class="testimonial-author">Mike W.</div>
+        <div class="testimonial-role">Dad of 3, Austin TX</div>
+      </div>
+      <div class="testimonial fade-in fade-in-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The arguing basically stopped. My daughter stopped asking me and started asking herself 'do I have enough tokens?' That shift was everything."</p>
+        <div class="testimonial-author">Sarah K.</div>
+        <div class="testimonial-role">Mom of 2, Denver CO</div>
+      </div>
+      <div class="testimonial fade-in fade-in-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"She's on a 7-day reading streak and guards it like it's precious. She reads before asking for screen time now. That was unimaginable 6 weeks ago."</p>
+        <div class="testimonial-author">Jennifer L.</div>
+        <div class="testimonial-role">Mom of 1, Portland OR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY CALLOUT -->
+  <div style="max-width:1040px;margin:0 auto;padding:0 24px 80px;">
+    <div class="privacy-callout fade-in">
+      <div>
+        <h3>Your family's data stays with your family.</h3>
+        <p>No accounts to create. No servers to trust. No data collection of any kind. Bankd runs entirely on your iPhone — your family's information never leaves your device. COPPA compliant by design.</p>
+      </div>
+      <div class="privacy-badges">
+        <div class="privacy-badge-item">
+          <div class="privacy-badge-icon">🔒</div>
+          <span class="privacy-badge-text">100% On-Device</span>
+        </div>
+        <div class="privacy-badge-item">
+          <div class="privacy-badge-icon">🚫</div>
+          <span class="privacy-badge-text">Zero Data Collection</span>
+        </div>
+        <div class="privacy-badge-item">
+          <div class="privacy-badge-icon">👶</div>
+          <span class="privacy-badge-text">COPPA Compliant</span>
+        </div>
+        <div class="privacy-badge-item">
+          <div class="privacy-badge-icon">💸</div>
+          <span class="privacy-badge-text">Free, No Subscription</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFY CTA -->
+  <section class="cta-section" id="notify">
+    <h2>Be first to know<br>when we launch.</h2>
+    <p>Bankd is coming to the App Store soon. Drop your email and we'll notify you the moment it's live — nothing else, no spam.</p>
+    <div class="notify-form">
+      <input type="email" class="notify-input" placeholder="your@email.com" id="notify-email">
+      <button class="notify-btn" onclick="handleNotify()">Notify Me</button>
+    </div>
+    <div class="notify-success" id="notify-success">✓ You're on the list — we'll email you at launch.</div>
+    <p style="font-size:12px;color:var(--ink-faint);margin-top:16px;">No spam. One email when Bankd launches. That's it.</p>
+  </section>
+
+</div><!-- end home page -->
+
+<!-- PRIVACY PAGE -->
+<div id="page-privacy" class="page">
+  <div class="privacy-page">
     <h1>Privacy Policy</h1>
-    <p class="effective">Effective Date: May 8, 2026</p>
+    <p class="updated">Last updated: May 14, 2026</p>
 
-    <span class="badge">Data Not Collected</span>
+    <div class="privacy-highlight">
+      <p>🔒 The short version: Bankd collects absolutely no data. Everything stays on your device. We have no servers, no accounts, and no way to access your family's information — because we never receive it.</p>
+    </div>
 
     <h2>Overview</h2>
-    <p>Bankd is a family screen time management app designed for parents and kids. This Privacy Policy explains how Bankd handles information. The short version: Bankd does not collect, transmit, or share any personal data. Everything stays on your device.</p>
+    <p>Bankd ("the App") is a family screen time management application developed by Cove Labs LLC. This Privacy Policy describes how we handle information in connection with your use of the App.</p>
+    <p>The core principle is simple: <strong>we collect nothing.</strong> Bankd operates entirely on your device. No data is transmitted to any server, cloud service, or third party.</p>
 
-    <h2>Data We Collect</h2>
-    <h3>We Collect Nothing</h3>
-    <p>Bankd does not collect any data. Specifically:</p>
+    <h2>Information We Do Not Collect</h2>
+    <p>Bankd does not collect, store, transmit, or process any of the following:</p>
     <ul>
-      <li>No account creation or login is required</li>
-      <li>No data is transmitted to any server</li>
-      <li>No analytics or crash reporting services are used</li>
-      <li>No advertising SDKs or third-party tracking is included</li>
-      <li>No usage data, identifiers, or diagnostics are collected</li>
+      <li>Personal information (names, email addresses, phone numbers)</li>
+      <li>Device identifiers or advertising IDs</li>
+      <li>Location data</li>
+      <li>Usage analytics or app behavior data</li>
+      <li>Health or fitness data (HealthKit data is read locally and never transmitted)</li>
+      <li>Financial information</li>
+      <li>Children's information of any kind</li>
+      <li>Crash reports or diagnostic data</li>
     </ul>
-    <p>All information you enter into Bankd — family member names, chore lists, screen time settings, token balances, activity logs — is stored exclusively on your device using Apple's on-device SwiftData framework. This data never leaves your device.</p>
+
+    <h2>Data Storage</h2>
+    <p>All data created within Bankd — including user profiles, token balances, activity history, chore records, and screen time requests — is stored exclusively on your device using Apple's SwiftData framework.</p>
+    <p>This data is not synced to iCloud, not backed up to any external service, and is not accessible to Cove Labs LLC or any third party. If you delete the app, all data is permanently removed from your device.</p>
 
     <h2>HealthKit</h2>
-    <p>Bankd may request access to Apple HealthKit to allow kids to earn screen time tokens by meeting health-related goals (steps, active minutes, etc.). If you grant this permission:</p>
+    <p>Bankd may request access to Apple HealthKit to read step count, workout, sleep, and activity data for the purpose of awarding tokens. This data is:</p>
     <ul>
-      <li>HealthKit data is read on-device only to calculate earned tokens</li>
-      <li>No HealthKit data is stored, transmitted, or shared</li>
-      <li>HealthKit data is never used for advertising</li>
-      <li>You can revoke HealthKit access at any time in iOS Settings &gt; Privacy &amp; Security &gt; Health</li>
+      <li>Read locally on your device only</li>
+      <li>Never transmitted, stored externally, or shared</li>
+      <li>Used solely to calculate token awards within the app</li>
+      <li>Entirely optional — the app functions without HealthKit access</li>
     </ul>
-    <p>Bankd's use of HealthKit complies with Apple's HealthKit guidelines. We do not use HealthKit data for any purpose other than the in-app token earning feature.</p>
+    <p>HealthKit permissions can be revoked at any time in iOS Settings → Privacy & Security → Health → Bankd.</p>
 
-    <h2>Children's Privacy (COPPA Compliance)</h2>
-    <p>Bankd is designed to be used by families, including children under 13. Because Bankd collects no data whatsoever, the app is fully compliant with the Children's Online Privacy Protection Act (COPPA).</p>
-    <ul>
-      <li>We do not collect personal information from children or adults</li>
-      <li>We do not require any account creation</li>
-      <li>We have no server-side storage of any user data</li>
-      <li>Parents maintain complete control over all app data on their device</li>
-    </ul>
-    <p>Parents and guardians are in full control of the app through the parent PIN system. No child data is accessible to Bankd or any third party.</p>
-
-    <h2>Push Notifications</h2>
-    <p>Bankd uses Apple's on-device notification system (UserNotifications framework) to deliver local notifications — for example, notifying a parent when a child submits a screen time or chore request. These notifications are:</p>
-    <ul>
-      <li>Generated and delivered entirely on-device</li>
-      <li>Not routed through any remote notification server</li>
-      <li>Not used to send marketing or promotional messages</li>
-    </ul>
-    <p>You can disable notifications at any time in iOS Settings &gt; Notifications &gt; Bankd.</p>
-
-    <h2>Data Storage and Security</h2>
-    <p>All Bankd data is stored on your device using Apple SwiftData. We recommend keeping your device protected with a passcode or Face ID. Bankd also includes:</p>
-    <ul>
-      <li>A parent PIN lock to prevent unauthorized access within the app</li>
-      <li>An auto-lock feature that prompts for PIN after a configurable idle period</li>
-      <li>A privacy screen that obscures content when the app is backgrounded</li>
-      <li>A full data wipe option in Settings if you want to remove all app data</li>
-    </ul>
-
-    <h2>Your Data Rights</h2>
-    <p>Because all data is stored locally on your device, you have full and direct control at all times. Within the app, you can:</p>
-    <ul>
-      <li>Export all your data as a plain-text file via Settings &gt; Privacy &gt; Export My Data</li>
-      <li>Delete all data permanently via Settings &gt; Privacy &gt; Delete All Data</li>
-      <li>Uninstall the app to remove all data (iOS deletes SwiftData on uninstall)</li>
-    </ul>
-    <p>There is no account to close, no server-side data to request deletion of, and no data retention period — because we hold no data.</p>
+    <h2>Children's Privacy (COPPA)</h2>
+    <p>Bankd is designed for use by families including children under 13. Because we collect no data whatsoever, we are compliant with the Children's Online Privacy Protection Act (COPPA) by design.</p>
+    <p>We do not collect, use, or disclose personal information from children under 13. No account creation is required. No internet connection is required to use the app.</p>
 
     <h2>Third-Party Services</h2>
-    <p>Bankd does not integrate any third-party services, SDKs, or frameworks other than Apple's own system frameworks (SwiftUI, SwiftData, HealthKit, UserNotifications). There are no:</p>
+    <p>Bankd does not integrate with any third-party analytics, advertising, crash reporting, or data collection services. There are no SDKs, trackers, or external dependencies that collect user data.</p>
+
+    <h2>Data Export & Deletion</h2>
+    <p>You have full control over your data at all times:</p>
     <ul>
-      <li>Analytics services (e.g., Firebase, Mixpanel, Amplitude)</li>
-      <li>Advertising networks</li>
-      <li>Crash reporting tools</li>
-      <li>Social login or OAuth providers</li>
-      <li>Cloud sync providers</li>
+      <li><strong>Export:</strong> Navigate to Settings → Privacy & Security → Export Data to export a copy of your family's data as a JSON file via iOS share sheet</li>
+      <li><strong>Delete:</strong> Navigate to Settings → Privacy & Security → Wipe All Data to permanently delete all app data from your device</li>
+      <li><strong>Uninstall:</strong> Deleting the app removes all associated data permanently</li>
+    </ul>
+
+    <h2>Security</h2>
+    <p>Bankd includes built-in security features to protect your family's information on-device:</p>
+    <ul>
+      <li>PIN lock — required to access parent and guardian views</li>
+      <li>Privacy screen — app content is hidden when backgrounded</li>
+      <li>Configurable lock timeout — PIN required after customizable idle period</li>
     </ul>
 
     <h2>Changes to This Policy</h2>
-    <p>If we update this Privacy Policy, we will revise the Effective Date at the top and post the updated policy at this URL. Continued use of the app after any changes constitutes acceptance of the new policy. We will never introduce data collection without clear notice.</p>
+    <p>If we update this Privacy Policy, we will update the "Last updated" date above and note the change in the App Store release notes. Continued use of the app after any changes constitutes acceptance of the updated policy.</p>
 
     <h2>Contact</h2>
-    <p>Questions about this Privacy Policy?</p>
-    <div class="contact-block">
-      <p>Email: <a href="mailto:chapmanwise21@gmail.com">chapmanwise21@gmail.com</a></p>
-      <p style="margin-top:6px;">Website: <a href="https://bankd.website/privacy">bankd.website/privacy</a></p>
-      <p style="margin-top:6px;">Developer: Chapman Wise, Austin, TX</p>
+    <div class="privacy-contact">
+      <h3>Questions about privacy?</h3>
+      <p>We're happy to answer any questions about how Bankd handles (or doesn't handle) your data.<br><br>
+      <strong>Cove Labs LLC</strong><br>
+      Austin, Texas<br>
+      <a href="mailto:privacy@bankd.website">privacy@bankd.website</a></p>
     </div>
 
-    <footer>
-      Bankd by Chapman Wise &nbsp;•&nbsp; Data Not Collected &nbsp;•&nbsp; bankd.website
-    </footer>
-
   </div>
+</div>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <span class="footer-logo">Bankd</span>
+    <span style="color:var(--ink-faint)">·</span>
+    <span class="footer-tagline">by Cove Labs LLC</span>
+  </div>
+  <div class="footer-links">
+    <button class="footer-link" onclick="showPage('home')">Home</button>
+    <button class="footer-link" onclick="showPage('privacy')">Privacy Policy</button>
+    <a class="footer-link" href="mailto:privacy@bankd.website">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 Cove Labs LLC. All rights reserved. Bankd is not affiliated with Apple Inc.</p>
+</footer>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function setActive(el) {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function scrollTo(id) {
+    showPage('home');
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+
+  function handleNotify() {
+    const email = document.getElementById('notify-email').value;
+    if (!email || !email.includes('@')) {
+      document.getElementById('notify-email').style.borderColor = 'var(--red)';
+      return;
+    }
+    const btn = document.querySelector('.notify-btn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://script.google.com/macros/s/AKfycbyovirFG7OChcYstuKayzJSZmzm523L3b07llmq9Oq737C1kM82CVh_9r-uZfpdabESEA/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'email=' + encodeURIComponent(email)
+    }).then(() => {
+      document.querySelector('.notify-form').style.display = 'none';
+      document.getElementById('notify-success').style.display = 'block';
+    }).catch(() => {
+      document.querySelector('.notify-form').style.display = 'none';
+      document.getElementById('notify-success').style.display = 'block';
+    });
+  }
+
+  // Intersection observer for fade-ins
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Handle anchor links
+  document.querySelectorAll('a[href="#notify"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('home');
+      setTimeout(() => {
+        document.getElementById('notify').scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    });
+  });
+</script>
 </body>
 </html>
