@@ -855,8 +855,8 @@
   </a>
   <div class="nav-links">
     <button class="nav-link active" onclick="showPage('home'); setActive(this)">Home</button>
-    <button class="nav-link" onclick="scrollTo('features'); setActive(this)">Features</button>
-    <button class="nav-link" onclick="scrollTo('roadmap-section'); setActive(this)">Roadmap</button>
+    <button class="nav-link" onclick="scrollToSection('features'); setActive(this)">Features</button>
+    <button class="nav-link" onclick="scrollToSection('roadmap-section'); setActive(this)">Roadmap</button>
     <button class="nav-link" onclick="showPage('privacy'); setActive(this)">Privacy</button>
     <a class="nav-cta" href="#notify">Get Notified</a>
   </div>
@@ -1126,7 +1126,7 @@
     </div>
 
     <h2>Overview</h2>
-    <p>Bankd ("the App") is a family screen time management application developed by Cove Labs LLC. This Privacy Policy describes how we handle information in connection with your use of the App.</p>
+    <p>Bankd ("the App") is a family screen time management application developed by Chapman Wise. This Privacy Policy describes how we handle information in connection with your use of the App.</p>
     <p>The core principle is simple: <strong>we collect nothing.</strong> Bankd operates entirely on your device. No data is transmitted to any server, cloud service, or third party.</p>
 
     <h2>Information We Do Not Collect</h2>
@@ -1144,7 +1144,7 @@
 
     <h2>Data Storage</h2>
     <p>All data created within Bankd — including user profiles, token balances, activity history, chore records, and screen time requests — is stored exclusively on your device using Apple's SwiftData framework.</p>
-    <p>This data is not synced to iCloud, not backed up to any external service, and is not accessible to Cove Labs LLC or any third party. If you delete the app, all data is permanently removed from your device.</p>
+    <p>This data is not synced to iCloud, not backed up to any external service, and is not accessible to the developer or any third party. If you delete the app, all data is permanently removed from your device.</p>
 
     <h2>HealthKit</h2>
     <p>Bankd may request access to Apple HealthKit to read step count, workout, sleep, and activity data for the purpose of awarding tokens. This data is:</p>
@@ -1186,9 +1186,9 @@
     <div class="privacy-contact">
       <h3>Questions about privacy?</h3>
       <p>We're happy to answer any questions about how Bankd handles (or doesn't handle) your data.<br><br>
-      <strong>Cove Labs LLC</strong><br>
+      <strong>Chapman Wise</strong><br>
       Austin, Texas<br>
-      <a href="mailto:privacy@bankd.website">privacy@bankd.website</a></p>
+      <a href="mailto:chapmanwise21@gmail.com">chapmanwise21@gmail.com</a></p>
     </div>
 
   </div>
@@ -1199,14 +1199,14 @@
   <div class="footer-left">
     <span class="footer-logo">Bankd</span>
     <span style="color:var(--ink-faint)">·</span>
-    <span class="footer-tagline">by Cove Labs LLC</span>
+    <span class="footer-tagline">by Chapman Wise</span>
   </div>
   <div class="footer-links">
     <button class="footer-link" onclick="showPage('home')">Home</button>
     <button class="footer-link" onclick="showPage('privacy')">Privacy Policy</button>
-    <a class="footer-link" href="mailto:privacy@bankd.website">Contact</a>
+    <a class="footer-link" href="mailto:chapmanwise21@gmail.com">Contact</a>
   </div>
-  <p class="footer-copy">© 2026 Cove Labs LLC. All rights reserved. Bankd is not affiliated with Apple Inc.</p>
+  <p class="footer-copy">© 2026 Chapman Wise. All rights reserved. Bankd is not affiliated with Apple Inc.</p>
 </footer>
 
 <script>
@@ -1221,7 +1221,7 @@
     el.classList.add('active');
   }
 
-  function scrollTo(id) {
+  function scrollToSection(id) {
     showPage('home');
     setTimeout(() => {
       const el = document.getElementById(id);
